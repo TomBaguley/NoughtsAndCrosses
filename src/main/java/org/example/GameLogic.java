@@ -37,15 +37,15 @@ public class GameLogic {
         rowList.add(row2);
         rowList.add(row3);
         for (String[] r: rowList) {
-            if (!r[0].equals("-") && r[0].equals(r[1]) && r[0].equals(r[2])){
+            if (!r[0].equals("-") && r[0].equals(r[1]) && r[0].equals(r[2])) {
                 gameWon = true;
-                return;
+                break;
             }
         }
         for(int i = 0; i < 3; i++) {
             if (!row1[i].equals("-") && row1[i].equals(row2[i]) && row1[i].equals(row3[i])) {
                 gameWon = true;
-                return;
+                break;
             }
 
         }
