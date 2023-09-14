@@ -25,6 +25,7 @@ public class NoughtsAndCrosses {
                 board1.setRow3(userColumn, "X");
             }
             System.out.println(board1);
+            gameLogic.setGameWon(board1.getRow1(), board1.getRow2(), board1.getRow3());
             System.out.println(gameLogic.isGameWon());
         }
     }
