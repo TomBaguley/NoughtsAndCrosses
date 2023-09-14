@@ -55,9 +55,6 @@ public class GameLogic {
         else if(!row1[2].equals("-") && row1[2].equals(row2[1]) && row1[2].equals(row3[0])) {
             gameWon = true;
         }
-        else{
-            gameWon = false;
-        }
     }
 
     public boolean isGameOver() {
