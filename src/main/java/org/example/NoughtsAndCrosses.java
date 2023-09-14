@@ -12,6 +12,7 @@ public class NoughtsAndCrosses {
         GameLogic gameLogic = new GameLogic();
         gameLogic.setGameWon(board1.getRow1(), board1.getRow2(), board1.getRow3());
         System.out.println(gameLogic.isGameWon());
+        System.out.println(board1);
         while(!gameLogic.gameWon) {
             System.out.println("Please enter the column number followed by the row number. e.g 1,2");
             int userColumn = myScanner.nextInt();

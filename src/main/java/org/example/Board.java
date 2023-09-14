@@ -39,6 +39,6 @@ public class Board {
         String formattedRow2 = Arrays.toString(row2).replace(",","").replace("[","|").replace("]","|");
         String formattedRow1 = Arrays.toString(row1).replace(",","");
 
-        return formattedRow3 + '\n' + formattedRow2 + '\n' + formattedRow1 + '\n' + columnNumbers;
+        return formattedRow3 + "3" + '\n' + formattedRow2 + "2" + '\n' + formattedRow1 + "1" + '\n' + columnNumbers;
     }
 }
