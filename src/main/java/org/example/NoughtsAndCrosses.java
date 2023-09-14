@@ -15,6 +15,12 @@ public class NoughtsAndCrosses {
         if(userRow == 1){
             board1.setRow1(userColumn,"X");
         }
+        else if(userRow == 2){
+            board1.setRow2(userColumn,"X");
+        }
+        else if(userColumn == 3){
+            board1.setRow3(userColumn,"X");
+        }
         System.out.println(board1);
     }
 }

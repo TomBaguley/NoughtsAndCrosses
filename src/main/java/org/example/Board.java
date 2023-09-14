@@ -20,16 +20,16 @@ public class Board {
         return row2;
     }
 
-    public void setRow2(String[] row2) {
-        this.row2 = row2;
+    public void setRow2(int input, String replacement) {
+        row2[input-1] = replacement;
     }
 
     public String[] getRow3() {
         return row3;
     }
 
-    public void setRow3(String[] row3) {
-        this.row3 = row3;
+    public void setRow3(int input, String replacement) {
+        row3[input-1] = replacement;
     }
 
     @Override
