@@ -1,7 +1,10 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class NoughtsAndCrosses {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+      Board board1 = new Board();
+        System.out.println(board1);
     }
 }
