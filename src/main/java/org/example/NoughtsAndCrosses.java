@@ -18,8 +18,53 @@ public class NoughtsAndCrosses {
         player1.setPlayerName(myScanner.nextLine());
         System.out.println("Player 2, please enter your name");
         player2.setPlayerName(myScanner.nextLine());
-        player1.setPlayerSymbol("X");
-        player2.setPlayerSymbol("O");
+
+        System.out.println("Would you like to pick custom symbols? y/n");
+
+        if (myScanner.nextLine().equalsIgnoreCase("y") || myScanner.nextLine().equalsIgnoreCase("yes")){
+            System.out.println(player1.getPlayerName() + ", please pick a symbol:");
+            String custom1 = myScanner.nextLine();
+            boolean validSymbol1 = false;
+
+            while(!validSymbol1) {
+
+                if (custom1.length() != 1) {
+                    System.out.println("Symbol must be 1 character, enter another symbol");
+                }
+                else if (custom1.equals("-") || custom1.equals(",") || custom1.equals("[")
+                        || custom1.equals("]") || custom1.equals("|")) {
+                    System.out.println("Invalid symbol, please enter another");
+                }
+                else{
+                    validSymbol1 = true;
+                }
+            }
+            player1.setPlayerSymbol(custom1);
+            String custom2 = myScanner.nextLine();
+            boolean validSymbol2 = false;
+
+            while(!validSymbol2) {
+
+                if (custom2.length() != 1) {
+                    System.out.println("Symbol must be 1 character, enter another symbol");
+                }
+                else if (custom2.equals("-") || custom2.equals(",") || custom2.equals("[")
+                        || custom2.equals("]") || custom2.equals("|")) {
+                    System.out.println("Invalid symbol, please enter another");
+                }
+                else if (custom2.equals(custom1)){
+                    System.out.println("Symbol cannot be the same as" + player1.getPlayerName() + "'s, please enter another symbol");
+                }
+                else{
+                    validSymbol2 = true;
+                }
+            }
+            player2.setPlayerSymbol(custom2);
+        }
+        else {
+            player1.setPlayerSymbol("X");
+            player2.setPlayerSymbol("O");
+        }
 
         int turnCounter = 1;
         System.out.println(player1.getPlayerName() + ", pick heads or tails to decide who goes first");
