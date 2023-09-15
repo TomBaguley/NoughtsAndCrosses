@@ -102,7 +102,6 @@ public class NoughtsAndCrosses {
                     System.out.println(board1);
                     turnCounter++;
                     gameLogic.setBoardFull(board1.getRow1(), board1.getRow2(), board1.getRow3());
-                    System.out.println(gameLogic.boardFull);
                     gameLogic.setGameWon(board1.getRow1(), board1.getRow2(), board1.getRow3());
                     if (gameLogic.isBoardFull() && !gameLogic.isGameWon()) {
                         System.out.println("Draw!");

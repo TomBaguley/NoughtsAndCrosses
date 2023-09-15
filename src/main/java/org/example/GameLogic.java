@@ -26,13 +26,11 @@ public class GameLogic {
                     boardFull = false;
                     break;
                 }
-                else{
-                    boardFull = true;
-                }
-            }
 
+            }
         }
     }
+
 
     public boolean isFlipWon() {
         return flipWon;
