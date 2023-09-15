@@ -46,13 +46,20 @@ public class GameLogic {
         return gameLegal;
     }
 
-    public void setGameLegal(int userColumn, int userRow, String[] row) {
+    public void setGameLegal(int userColumn, int userRow, String[] row1, String[] row2, String[] row3) {
         if (userRow < 0 || userRow > 3) {
             gameLegal = false;
         } else //Change to user's choice of symbol if added down the line.
             if (userColumn < 0 || userColumn > 3) {
                 gameLegal = false;
-            } else gameLegal = !row[userRow - 1].equals("X") && !row[userRow - 1].equals("O");
+            } else if(userRow == 1){
+                gameLegal = !row1[userColumn - 1].equals("X") && !row1[userColumn - 1].equals("O");
+            } else if (userRow == 2) {
+                gameLegal = !row2[userColumn - 1].equals("X") && !row2[userColumn - 1].equals("O");
+            }
+            else if (userRow == 3) {
+                gameLegal = !row3[userColumn - 1].equals("X") && !row3[userColumn - 1].equals("O");
+            }
     }
 
     public boolean isGameWon() {
