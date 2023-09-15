@@ -61,12 +61,17 @@ public class NoughtsAndCrosses {
             player1.setPlayerSymbol("X");
             player2.setPlayerSymbol("O");
         }
+
         player1.setPlayerScore(0);
         player2.setPlayerScore(0);
+
         gameLogic.gameOver = false;
+
         while (!gameLogic.gameOver) {
+
             gameLogic.gameWon = false;
             int turnCounter = 1;
+
             System.out.println(player1.getPlayerName() + ", pick heads or tails to decide who goes first");
             gameLogic.setFlipWon(myScanner.nextLine());
             if (gameLogic.isFlipWon()) {
@@ -75,6 +80,7 @@ public class NoughtsAndCrosses {
                 System.out.println("Unlucky, " + player1.getPlayerName() + ". " + player2.getPlayerName() + " goes first!");
                 turnCounter++;
             }
+
             Board board1 = new Board();
             gameLogic.setGameWon(board1.getRow1(), board1.getRow2(), board1.getRow3());
             System.out.println(board1);
@@ -85,6 +91,7 @@ public class NoughtsAndCrosses {
                 } else {
                     leadPlayer = player2;
                 }
+
                 System.out.println(leadPlayer.getPlayerName() + ", please enter the column number followed by the row number. e.g 1,2");
                 int userColumn = myScanner.nextInt();
                 int userRow = myScanner.nextInt();
@@ -118,6 +125,7 @@ public class NoughtsAndCrosses {
 
                 }
             }
+
             System.out.println("Would you like to play again? y/n");
             myScanner.nextLine();
             String playAgain = myScanner.nextLine();
