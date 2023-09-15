@@ -20,8 +20,8 @@ public class NoughtsAndCrosses {
         player2.setPlayerName(myScanner.nextLine());
 
         System.out.println("Would you like to pick custom symbols? y/n");
-
-        if (myScanner.nextLine().equalsIgnoreCase("y") || myScanner.nextLine().equalsIgnoreCase("yes")) {
+        String customChoice =  myScanner.nextLine();
+        if (customChoice.equalsIgnoreCase("y") || customChoice.equalsIgnoreCase("yes")) {
             System.out.println(player1.getPlayerName() + ", please pick a symbol:");
             String custom1 = myScanner.nextLine();
             boolean validSymbol1 = false;
@@ -65,6 +65,7 @@ public class NoughtsAndCrosses {
         player2.setPlayerScore(0);
         gameLogic.gameOver = false;
         while (!gameLogic.gameOver) {
+            gameLogic.gameWon = false;
             int turnCounter = 1;
             System.out.println(player1.getPlayerName() + ", pick heads or tails to decide who goes first");
             gameLogic.setFlipWon(myScanner.nextLine());
