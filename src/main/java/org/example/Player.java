@@ -3,6 +3,15 @@ package org.example;
 public class Player {
     private String playerName;
     private String playerSymbol;
+    private int playerScore;
+
+    public int getPlayerScore() {
+        return playerScore;
+    }
+
+    public void setPlayerScore(int playerScore) {
+        this.playerScore = playerScore;
+    }
 
     public String getPlayerSymbol() {
         return playerSymbol;
