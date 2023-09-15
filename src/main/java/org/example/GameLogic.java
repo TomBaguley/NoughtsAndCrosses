@@ -70,19 +70,19 @@ public class GameLogic {
         return gameLegal;
     }
 
-    public void setGameLegal(int userColumn, int userRow, String[] row1, String[] row2, String[] row3) {
+    public void setGameLegal(int userColumn, int userRow, String[] row1, String[] row2, String[] row3, String symbol1, String symbol2) {
         if (userRow < 0 || userRow > 3) {
             gameLegal = false;
         } else //Change to user's choice of symbol if added down the line.
             if (userColumn < 0 || userColumn > 3) {
                 gameLegal = false;
             } else if(userRow == 1){
-                gameLegal = !row1[userColumn - 1].equals("X") && !row1[userColumn - 1].equals("O");
+                gameLegal = !row1[userColumn - 1].equals(symbol1) && !row1[userColumn - 1].equals(symbol2);
             } else if (userRow == 2) {
-                gameLegal = !row2[userColumn - 1].equals("X") && !row2[userColumn - 1].equals("O");
+                gameLegal = !row2[userColumn - 1].equals(symbol1) && !row2[userColumn - 1].equals(symbol2);
             }
             else if (userRow == 3) {
-                gameLegal = !row3[userColumn - 1].equals("X") && !row3[userColumn - 1].equals("O");
+                gameLegal = !row3[userColumn - 1].equals(symbol1) && !row3[userColumn - 1].equals(symbol2);
             }
     }
 

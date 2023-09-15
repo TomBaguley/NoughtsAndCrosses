@@ -8,7 +8,7 @@ public class Player {
         return playerSymbol;
     }
 
-    public void setPlayerSymbol(String userSymbol) {
+    public void setPlayerSymbol(String playerSymbol) {
         this.playerSymbol = playerSymbol;
     }
 

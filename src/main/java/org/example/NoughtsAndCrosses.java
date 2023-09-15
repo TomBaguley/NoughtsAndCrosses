@@ -40,6 +40,8 @@ public class NoughtsAndCrosses {
                 }
             }
             player1.setPlayerSymbol(custom1);
+
+            System.out.println(player2.getPlayerName() + ", please pick a symbol:");
             String custom2 = myScanner.nextLine();
             boolean validSymbol2 = false;
 
@@ -90,8 +92,12 @@ public class NoughtsAndCrosses {
             System.out.println(leadPlayer.getPlayerName() + ", please enter the column number followed by the row number. e.g 1,2");
             int userColumn = myScanner.nextInt();
             int userRow = myScanner.nextInt();
-            gameLogic.setGameLegal(userColumn, userRow, board1.getRow1(), board1.getRow2(), board1.getRow3());
-            if(gameLogic.isGameLegal()) {
+            gameLogic.setGameLegal(userColumn, userRow, board1.getRow1(), board1.getRow2(), board1.getRow3(),
+                    player1.getPlayerSymbol(), player2.getPlayerSymbol());
+                if(!gameLogic.gameLegal) {
+                    System.out.println("Not a legal move");
+                }
+                else {
                 if (userRow == 1) {
                     board1.setRow1(userColumn, leadPlayer.getPlayerSymbol());
                 } else if (userRow == 2) {
@@ -100,6 +106,7 @@ public class NoughtsAndCrosses {
                     board1.setRow3(userColumn, leadPlayer.getPlayerSymbol());
                 }
                 System.out.println(board1);
+                turnCounter++;
                 gameLogic.setBoardFull(board1.getRow1(), board1.getRow2(), board1.getRow3());
                 System.out.println(gameLogic.boardFull);
                 gameLogic.setGameWon(board1.getRow1(), board1.getRow2(), board1.getRow3());
@@ -110,10 +117,6 @@ public class NoughtsAndCrosses {
                 else if(gameLogic.isGameWon()){
                     System.out.println("Congratulations, " + leadPlayer.getPlayerName() + "! You Won!");
                 }
-                turnCounter++;
-            }
-            else{
-                System.out.println("Not a valid move");
             }
         }
     }
