@@ -42,7 +42,7 @@ public class NoughtsAndCrosses {
             else {
                 leadPlayer = player2;
             }
-            System.out.println("Please enter the column number followed by the row number. e.g 1,2");
+            System.out.println(leadPlayer.getPlayerName() + ", please enter the column number followed by the row number. e.g 1,2");
             int userColumn = myScanner.nextInt();
             int userRow = myScanner.nextInt();
             gameLogic.setGameLegal(userColumn, userRow, board1.getRow1(), board1.getRow2(), board1.getRow3());
@@ -55,7 +55,16 @@ public class NoughtsAndCrosses {
                     board1.setRow3(userColumn, leadPlayer.getPlayerSymbol());
                 }
                 System.out.println(board1);
+                gameLogic.setBoardFull(board1.getRow1(), board1.getRow2(), board1.getRow3());
+                System.out.println(gameLogic.boardFull);
                 gameLogic.setGameWon(board1.getRow1(), board1.getRow2(), board1.getRow3());
+                if(gameLogic.isBoardFull() && !gameLogic.isGameWon()){
+                    System.out.println("Draw!");
+                    break;
+                }
+                else if(gameLogic.isGameWon()){
+                    System.out.println("Congratulations, " + leadPlayer.getPlayerName() + "! You Won!");
+                }
                 turnCounter++;
             }
             else{

@@ -9,6 +9,30 @@ public class GameLogic {
     public boolean gameWon;
     public boolean gameOver;
     public boolean flipWon;
+    public boolean boardFull;
+
+    public boolean isBoardFull() {
+        return boardFull;
+    }
+
+    public void setBoardFull(String[] row1, String[] row2, String []row3) {
+        List<String[]> rowList =  new ArrayList<>();
+        rowList.add(row1);
+        rowList.add(row2);
+        rowList.add(row3);
+        for (String[] r : rowList) {
+            for(int i = 0; i < 3; i++){
+                if(r[i].equals("-")){
+                    boardFull = false;
+                    break;
+                }
+                else{
+                    boardFull = true;
+                }
+            }
+
+        }
+    }
 
     public boolean isFlipWon() {
         return flipWon;
