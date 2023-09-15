@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.Arrays.*;
 
 public class Board {
-    private String [] row3 = {"-","-","-"};
-    private String [] row2 = {"-","-","-"};
-    private String [] row1 = {"-","-","-"};
+    private final String [] row3 = {"-","-","-"};
+    private final String [] row2 = {"-","-","-"};
+    private final String [] row1 = {"-","-","-"};
 
     public String[] getRow1() {
         return row1;

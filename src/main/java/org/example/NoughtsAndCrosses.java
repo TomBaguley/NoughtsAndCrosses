@@ -6,13 +6,26 @@ import java.util.Scanner;
 
 public class NoughtsAndCrosses {
     public static void main(String[] args) {
+
+        Scanner myScanner =  new Scanner(System.in);
+
+        GameLogic gameLogic = new GameLogic();
+
         Player player1 =  new Player();
         Player player2 = new Player();
+        System.out.println("Player 1, please enter your name");
+        player1.setPlayerName(myScanner.nextLine());
+        System.out.println("Player 2, please enter your name");
+        player2.setPlayerName(myScanner.nextLine());
+
+        int turnCounter = 1;
+        System.out.println(player1.getPlayerName() + ", pick heads or tails to decide who goes first");
+        gameLogic.setFlipWon(myScanner.nextLine());
+        if(gameLogic.isFlipWon()){
+            System.out.println("");
+        }
         Board board1 = new Board();
-        Scanner myScanner =  new Scanner(System.in);
-        GameLogic gameLogic = new GameLogic();
         gameLogic.setGameWon(board1.getRow1(), board1.getRow2(), board1.getRow3());
-        System.out.println(gameLogic.isGameWon());
         System.out.println(board1);
         while(!gameLogic.gameWon) {
             System.out.println("Please enter the column number followed by the row number. e.g 1,2");
