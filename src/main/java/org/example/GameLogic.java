@@ -71,7 +71,7 @@ public class GameLogic {
     public void setGameLegal(int userColumn, int userRow, String[] row1, String[] row2, String[] row3, String symbol1, String symbol2) {
         if (userRow < 0 || userRow > 3) {
             gameLegal = false;
-        } else //Change to user's choice of symbol if added down the line.
+        } else
             if (userColumn < 0 || userColumn > 3) {
                 gameLegal = false;
             } else if(userRow == 1){
