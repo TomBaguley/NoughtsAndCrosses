@@ -94,19 +94,19 @@ public class GameLogic {
         rowList.add(row2);
         rowList.add(row3);
         for (String[] r : rowList) {
-            if (!r[0].equals("-") && r[0].equals(r[1]) && r[0].equals(r[2])) {
+            if (!r[0].equals("-") && r[0].equals(r[1]) && r[0].equals(r[2])) { //Testing each row
                 gameWon = true;
                 break;
             }
         }
         for (int i = 0; i < 3; i++) {
-            if (!row1[i].equals("-") && row1[i].equals(row2[i]) && row1[i].equals(row3[i])) {
+            if (!row1[i].equals("-") && row1[i].equals(row2[i]) && row1[i].equals(row3[i])) { //testing each column
                 gameWon = true;
                 break;
             }
 
         }
-        if (!row1[0].equals("-") && row1[0].equals(row2[1]) && row1[0].equals(row3[2])) {
+        if (!row1[0].equals("-") && row1[0].equals(row2[1]) && row1[0].equals(row3[2])) { //Testing the diagonals
             gameWon = true;
         } else if (!row1[2].equals("-") && row1[2].equals(row2[1]) && row1[2].equals(row3[0])) {
             gameWon = true;
