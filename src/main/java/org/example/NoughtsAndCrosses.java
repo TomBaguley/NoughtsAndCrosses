@@ -99,6 +99,7 @@ public class NoughtsAndCrosses {
                         player1.getPlayerSymbol(), player2.getPlayerSymbol());
                 if (!gameLogic.gameLegal) {
                     System.out.println("Not a legal move");
+                    myScanner.reset();
                 } else {
                     if (userRow == 1) {
                         board1.setRow1(userColumn, leadPlayer.getPlayerSymbol());
