@@ -47,5 +47,16 @@ public class GameLogicTests {
         boolean actualOutput = uut.isGameWon();
         assertEquals(expectedOutput,actualOutput);
     }
+    @Test
+    public void rowsTooSmall(){
+        String[] row1 = {"X","-"};
+        String[] row2 = {"X","-"};
+        String[] row3 = {"X","O"};
+        boolean expectedOutput = false;
+        uut.setGameWon(row1, row2, row3);
+        boolean actualOutput = uut.isGameWon();
+        assertEquals(expectedOutput,actualOutput);
+    }
+
 
 }
