@@ -92,7 +92,7 @@ public class NoughtsAndCrosses {
                     leadPlayer = player2;
                 }
 
-                System.out.println(leadPlayer.getPlayerName() + ", please enter the column number followed by the row number. e.g 1,2");
+                System.out.println(leadPlayer.getPlayerName() + ", please enter the column number followed by a space then the row number. e.g 1 2");
                 int userColumn = myScanner.nextInt();
                 int userRow = myScanner.nextInt();
                 gameLogic.setGameLegal(userColumn, userRow, board1.getRow1(), board1.getRow2(), board1.getRow3(),
